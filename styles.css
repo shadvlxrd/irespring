@@ -1,5 +1,5 @@
-:root{--f7-list-inset-border-radius:20px;}
-body, html{overflow: hidden;}
+:root{--f7-list-inset-border-radius:20px;--f7-block-inset-border-radius:20px;} 
+body, html{overflow-x: hidden;overflow-y: hidden;}
 .page{font-size: auto;color:#fff; !important}
 .title{font-size:50px;color: #fff;font-weight: 900;font-family: "Doto", sans-serif;}.button {
   background: rgba(255,255,255,0.2);
@@ -14,3 +14,32 @@ border: 1px solid rgba(255,255,255,0.1);
 -webkit-backdrop-filter: blur(7px);
 backdrop-filter: blur(7px);
 border: 1px solid rgba(255,255,255,0.1);}
+.block-strong{background: rgba(255,255,255,0.2);
+-webkit-backdrop-filter: blur(7px);
+backdrop-filter: blur(7px);
+border: 1px solid rgba(255,255,255,0.1);}
+  .block.inset .title {
+      font-size: 60px;
+      color: #fff;
+      margin: 0;
+      line-height: 1.2;
+      text-align: left;
+    }
+
+    .block p {
+      margin: 0.5rem 0; 
+      font-size: 16px;
+      color: #fff;
+      text-align: left;
+          }
+
+    .block p:last-child {
+      color: lightgrey;
+    }
+
+
+    @media (min-width: 768px) {
+      .block.inset {
+        margin-top: 10%;
+      }
+    }
