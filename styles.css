@@ -1,0 +1,16 @@
+:root{--f7-list-inset-border-radius:20px;}
+body, html{overflow: hidden;}
+.page{font-size: auto;color:#fff; !important}
+.title{font-size:50px;color: #fff;font-weight: 900;font-family: "Doto", sans-serif;}.button {
+  background: rgba(255,255,255,0.2);
+-webkit-backdrop-filter: blur(7px);
+backdrop-filter: blur(7px);
+border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 15px;
+  text-transform: none; !important
+  margin-bottom: 80%;
+}
+.list-strong ul{background: rgba(255,255,255,0.2);
+-webkit-backdrop-filter: blur(7px);
+backdrop-filter: blur(7px);
+border: 1px solid rgba(255,255,255,0.1);}
