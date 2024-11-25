@@ -17,8 +17,8 @@ border: 1px solid rgba(255,255,255,0.1);
   flex-direction: column;
   justify-content: flex-start;
   overflow: hidden; 
+  background-image: url('background.png');      background-size: cover; background-repeat: no-repeat; height: 100%; width: 100%;
 }
-
 .respring-button {
   position: absolute;
   bottom: 53px;
@@ -50,7 +50,7 @@ border: 1px solid rgba(255,255,255,0.1);}
           }
 
     .block p:last-child {
-      color: lightgrey;
+      color: #eaeaff;
     }
 
 
