@@ -10,6 +10,22 @@ border: 1px solid rgba(255,255,255,0.1);
   text-transform: none; !important
   margin-bottom: 80%;
 }
+.page {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  overflow: hidden; 
+}
+
+.respring-button {
+  position: absolute;
+  bottom: 53px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 98%;
+}
 .list-strong ul{background: rgba(255,255,255,0.2);
 -webkit-backdrop-filter: blur(7px);
 backdrop-filter: blur(7px);
@@ -19,7 +35,7 @@ border: 1px solid rgba(255,255,255,0.1);}
 backdrop-filter: blur(7px);
 border: 1px solid rgba(255,255,255,0.1);}
   .block.inset .title {
-      font-size: 60px;
+      font-size: 56px;
       color: #fff;
       margin: 0;
       line-height: 1.2;
