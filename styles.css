@@ -9,7 +9,10 @@ border: 1px solid rgba(255,255,255,0.1);
   border-radius: 15px;
   text-transform: none; !important
   margin-bottom: 80%;
+  margin:var(--f7-list-inset-side-margin);
 }
+.block-title-large{font-size:auto;color:#fff;}
+.main-block{margin-top: 15%;}
 .page {
   position: relative;
   height: 100vh;
