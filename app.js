@@ -3,6 +3,11 @@ var app = new Framework7({
   name: 'iRespring',
   id: 'com.Outlander.irespring',
   theme: 'ios',
+  serviceWorker: {
+
+         path: "./service-worker.js"
+
+      },
   panel: {
     swipe: true,
   },
@@ -59,5 +64,18 @@ function shareURL() {
       });
 
    }
+
+}
+if ("serviceWorker" in navigator) {
+
+   navigator.serviceWorker.getRegistration().then(registration => {
+
+      if (!registration) {
+
+         navigator.serviceWorker.register("service-worker.js").then(() => {}).catch(() => {});
+
+      }
+
+   });
 
 }
