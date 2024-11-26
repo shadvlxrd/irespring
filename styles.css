@@ -39,6 +39,10 @@ html {
     line-height: 1;
 }
 
+.ios .button.active-state {
+  background: rgb(58, 58, 60);
+}
+
 .block-title-large {
   font-size: auto;
   color: #fff;

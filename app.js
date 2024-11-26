@@ -59,7 +59,7 @@ function shareURL() {
 
          text: "Respring your iDevice like a pro, no jailbreak or apps needed!",
 
-         url: "https://irespring.pages.dev/"
+         url: "https://3r1s-s.github.io/irespring/"
 
       });
 
