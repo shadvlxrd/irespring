@@ -1,27 +1,66 @@
-:root{--f7-list-inset-border-radius:20px;--f7-block-inset-border-radius:20px;} 
-body, html{overflow-x: hidden;overflow-y: hidden;}
-.page{font-size: auto;color:#fff; !important}
-.title{font-size:50px;color: #fff;font-weight: 900;font-family: "Doto", sans-serif;}.button {
-  background: rgba(255,255,255,0.2);
--webkit-backdrop-filter: blur(7px);
-backdrop-filter: blur(7px);
-border: 1px solid rgba(255,255,255,0.1);
-  border-radius: 15px;
-  text-transform: none; !important
-  margin-bottom: 80%;
-  margin:var(--f7-list-inset-side-margin);
+:root {
+  --f7-list-inset-border-radius: 10px;
+  --f7-block-inset-border-radius: 10px;
 }
-.block-title-large{font-size:auto;color:#fff;}
-.main-block{margin-top: 15%;}
+
+body,
+html {
+  overflow-x: hidden;
+  overflow-y: hidden;
+
+  margin: 0;
+  padding: 0;
+
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
 .page {
+  font-size: auto;
+  color: #fff !important;
+}
+
+.title {
+  font-size: 50px;
+  color: #fff;
+  font-weight: 700;
+}
+
+.button {
+  background: rgb(28, 28, 30);
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+  border: none;
+  border-radius: 10px;
+  text-transform: none !important;
+  margin-bottom: 80%;
+  margin: var(--f7-list-inset-side-margin);
+
+  text-wrap: balance;
+    line-height: 1;
+}
+
+.block-title-large {
+  font-size: auto;
+  color: #fff;
+}
+
+.main-block {
+  margin-top: 15%;
+}
+
+.page {
+  background-color: #000;
+
   position: relative;
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  overflow: hidden; 
-  background-image: url('background.png');      background-size: cover; background-repeat: no-repeat; height: 100%; width: 100%;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
 }
+
 .respring-button {
   position: absolute;
   bottom: 53px;
@@ -29,36 +68,71 @@ border: 1px solid rgba(255,255,255,0.1);
   transform: translateX(-50%);
   width: 98%;
 }
-.list-strong ul{background: rgba(255,255,255,0.2);
--webkit-backdrop-filter: blur(7px);
-backdrop-filter: blur(7px);
-border: 1px solid rgba(255,255,255,0.1);}
-.block-strong{background: rgba(255,255,255,0.2);
--webkit-backdrop-filter: blur(7px);
-backdrop-filter: blur(7px);
-border: 1px solid rgba(255,255,255,0.1);}
-  .block.inset .title {
-      font-size: 56px;
-      color: #fff;
-      margin: 0;
-      line-height: 1.2;
-      text-align: left;
-    }
 
-    .block p {
-      margin: 0.5rem 0; 
-      font-size: 16px;
-      color: #fff;
-      text-align: left;
-          }
+.list-strong ul {
+  background: rgb(28, 28, 30);
+  -webkit-backdrop-filter: blur(7px);
+  backdrop-filter: blur(7px);
+}
 
-    .block p:last-child {
-      color: #eaeaff;
-    }
+.block-strong {
+  background: transparent;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+  border: none;
+}
 
+.block {
+  margin: calc(34px + 11px + env(safe-area-inset-top)) calc(16px + env(safe-area-inset-left)) 8px calc(16px + env(safe-area-inset-right)) !important;
+  padding: 0 !important;
+}
 
-    @media (min-width: 768px) {
-      .block.inset {
-        margin-top: 10%;
-      }
-    }
+.block.inset .title {
+  font-size: 34px;
+  color: #fff;
+  margin: 0;
+  line-height: 1.2;
+  text-align: left;
+}
+
+.block p {
+  margin: 0.5rem 0;
+  font-size: 16px;
+  color: #fff;
+  text-align: left;
+  border: none !important;
+}
+
+.media-list .item-title, li.media-item .item-title {
+  font-weight: 400 !important;
+  font-size: 17px !important;
+  letter-spacing: -0.4px !important;
+  display: flex;
+  align-items: center;
+}
+
+.media-list .item-link .item-title-row:before, li.media-item .item-link .item-title-row:before {
+  color: rgba(235, 235, 245, 0.3) !important;
+  width: 8px;
+  height: 32px;
+}
+
+.f7-icons, .framework7-icons {
+  font-size: 22px !important;
+}
+
+.ios .list-dividers-ios .item-inner:after, .ios .list-dividers-ios.links-list a:after, .ios .list-dividers-ios.simple-list li:after, .list-dividers .item-inner:after, .list-dividers.links-list a:after, .list-dividers.simple-list li:after, .md .list-dividers-md .item-inner:after, .md .list-dividers-md.links-list a:after, .md .list-dividers-md.simple-list li:after {
+  background-color: rgba(84, 84, 88, 0.65) !important;
+}
+
+a.button.button-raised.button-fill.button-large.external {
+  gap: 6px;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .block.inset {
+      margin-top: 10%;
+  }
+}
