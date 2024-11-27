@@ -66,25 +66,45 @@ function shareURL() {
    }
 
 }
-function checkIOSVersion(version) {
-  const [major, minor, patch] = version.split('.').map(Number);
+function getIOSVersion() {
+  const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+  const match = userAgent.match(/OS (\d+)_(\d+)_?(\d+)? like Mac OS X/i);
+
+  if (match) {
+    const major = parseInt(match[1], 10);
+    const minor = parseInt(match[2], 10) || 0;
+    const patch = parseInt(match[3], 10) || 0;
+    return { major, minor, patch };
+  }
+  return null;
+}
+
+function checkCompatibility(version) {
+  const { major, minor, patch } = version;
 
   if (major > 15 || (major === 15 && (minor > 8 || (minor === 8 && patch > 3)))) {
-    return false; 
+    return false;
   }
 
   if (major < 12) {
     return false;
   }
 
-  return true; 
+  return true;
 }
 
-const iosVersion = '15.9.0'; 
+document.addEventListener('DOMContentLoaded', function () {
+  const iosVersion = getIOSVersion();
 
-if (!checkIOSVersion(iosVersion)) {
-  app.dialog.alert('This app is not compatible with your software version.');
-}
+  if (iosVersion) {
+    if (!checkCompatibility(iosVersion)) {
+      app.dialog.alert('This app is not compatible with your software version :/ ');
+    }
+  } else {
+    console.log('iOS version could not be detected.');
+  }
+});
+
 
 if ("serviceWorker" in navigator) {
 
