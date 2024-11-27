@@ -66,6 +66,29 @@ function shareURL() {
    }
 
 }
+// Function to check compatibility
+function checkIOSVersion(version) {
+  // Split the version into major, minor, and patch
+  const [major, minor, patch] = version.split('.').map(Number);
+
+  // Check if version is higher than 15.8.3
+  if (major > 15 || (major === 15 && (minor > 8 || (minor === 8 && patch > 3)))) {
+    return false; // Not compatible
+  }
+
+  if (major < 12) {
+    return false;
+  }
+
+  return true; 
+}
+
+const iosVersion = '15.9.0'; 
+
+if (!checkIOSVersion(iosVersion)) {
+  app.dialog.alert('This app is not compatible with your software version.');
+}
+
 if ("serviceWorker" in navigator) {
 
    navigator.serviceWorker.getRegistration().then(registration => {
