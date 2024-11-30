@@ -14,6 +14,34 @@ var app = new Framework7({
 });
 
 var mainView = app.views.create('.view-main');
+function checkiOSCompatibility() {
+  function getiOSVersion() {
+    const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+    if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+      const match = userAgent.match(/OS (\d+)_(\d+)_?(\d+)?/);
+      if (match) {
+        const major = parseInt(match[1], 10);
+        const minor = parseInt(match[2] || "0", 10);
+        const patch = parseInt(match[3] || "0", 10);
+        return { major, minor, patch };
+      }
+    }
+    return null;
+  }
+
+  const iOSVersion = getiOSVersion();
+  if (iOSVersion) {
+    const { major, minor, patch } = iOSVersion;
+    if (
+      major > 15 ||
+      (major === 15 && (minor > 8 || (minor === 8 && patch > 3)))
+    ) {
+      app.dialog.alert("This app is not compatible with your iOS/iPadOS version.");
+    }
+  }
+}
+
+checkiOSCompatibility();
 
 document.addEventListener('DOMContentLoaded', function () {
   if (window.navigator.standalone === true || window.matchMedia('(display-mode: standalone)').matches) {
@@ -66,6 +94,7 @@ function shareURL() {
    }
 
 }
+
 if ("serviceWorker" in navigator) {
 
    navigator.serviceWorker.getRegistration().then(registration => {
