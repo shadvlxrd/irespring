@@ -1,7 +1,7 @@
 var app = new Framework7({
   el: '#app',
   name: 'iRespring',
-  id: 'com.Outlander.irespring',
+  id: 'com.Shadow.irespring',
   theme: 'ios',
   serviceWorker: {
 
